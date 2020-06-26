@@ -5,6 +5,7 @@ const typeDefs = gql`
         greeting: String
         interestingUrls: [String]
         randomDiceThrow: Int
+        fewNumbers: [Int]
     }
 `;
 function rootValue(){ 
@@ -12,7 +13,8 @@ function rootValue(){
     const data = {
         greeting: "Hello world",
         interestingUrls: ["https://kursreacta.pl", "https://64bites.com"],
-        randomDiceThrow: getRandomDiceThrow(6)
+        randomDiceThrow: getRandomDiceThrow(6),
+        fewNumbers: [1,2,3]
     }
     return data;
 }
