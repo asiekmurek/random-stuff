@@ -11,7 +11,7 @@
   "author": "Joanna Murawska",
   "license": "MIT",
   "devDependencies": {
-    "nodemon": "^2.0.3"
+    "nodemon": "^2.0.4"
   },
   "dependencies": {
     "apollo-server": "^2.12.0",
