@@ -1,5 +1,6 @@
 const { ApolloServer, gql } = require("apollo-server");
 const PORT = process.env.PORT || 4000
+const Quotes = require("inspirational-quotes");
 const typeDefs = gql`
     type Query {
         greeting: String
@@ -12,7 +13,13 @@ const typeDefs = gql`
         today : DayOfWeek
         workDays: [DayOfWeek]
         schoredingerCatSayHi: String
+        randomQuote: Quote!
     }
+    type Quote{
+        text: String
+        author: String
+    }
+
     enum DayOfWeek {
         MON
         TUE 
@@ -46,7 +53,8 @@ const rootValue = () => {
         randomCoinTossesUntilTrue: getRandomCoinTossesUntilTrue(),
         today: DAYS_OF_WEEK[date.getDay()],
         workDays: DAYS_OF_WEEK.slice(1,6),
-        schoredingerCatSayHi: randomCoinToss() ? "meow" : null
+        schoredingerCatSayHi: randomCoinToss() ? "meow" : null,
+        randomQuote: Quotes.getQuote
     };
     return data;
 };
