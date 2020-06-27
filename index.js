@@ -8,6 +8,7 @@ const typeDefs = gql`
     }
 
     type MyQuery {
+        "A simple greeting"
         greeting: String
         interestingUrls: [String]
         randomDiceThrow: Int
@@ -20,6 +21,11 @@ const typeDefs = gql`
         schoredingerCatSayHi: String
         randomQuote: Quote!
     }
+    """
+    # The object representing a quote
+
+    ## It contains a text and author's name
+    """
     type Quote{
         text: String
         author: String
